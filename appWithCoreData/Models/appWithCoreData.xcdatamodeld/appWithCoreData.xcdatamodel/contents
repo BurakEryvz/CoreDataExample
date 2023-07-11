@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CarBrands" representedClassName="CarBrands" syncable="YES" codeGenerationType="class">
+        <attribute name="brandName" attributeType="String"/>
+        <relationship name="brandsModel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ModelsOfBrand" inverseName="parentBrand" inverseEntity="ModelsOfBrand"/>
+    </entity>
+    <entity name="ModelsOfBrand" representedClassName="ModelsOfBrand" syncable="YES" codeGenerationType="class">
+        <attribute name="modelName" attributeType="String"/>
+        <attribute name="releaseDate" attributeType="String"/>
+        <relationship name="parentBrand" maxCount="1" deletionRule="Nullify" destinationEntity="CarBrands" inverseName="brandsModel" inverseEntity="CarBrands"/>
+    </entity>
+</model>
